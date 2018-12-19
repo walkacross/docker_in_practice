@@ -13,7 +13,10 @@ from bson import json_util
 
 
 app = Flask(__name__)
-random_numbers = MongoClient('mongo', 27017).demo.random_numbers
+
+MONGO_URI = "mongodb://mongodb:27017"  # "mongodb:<container_name>:27017"
+mongdb_client= MongoClient(MONGO_URI)
+random_numbers = mongdb_client.demo.random_numbers
 
 time.sleep(5) # hack for the mongoDb database to get running
 

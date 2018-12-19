@@ -2,12 +2,16 @@ version: '3'
 
 services:
     webapp:
-        build: ./app
+        container_name: webapp
+        build: 
+          context: ./app
         ports:
             - "80:5000"
         depends_on:
-            - mongo
-    mongo:
-        image: mongo:3.4.0
+            - mongodb
+    mongodb:
+        container_name: mongodb
+        build:
+          context: ./mongodb
         ports:
             - "27017:27017"
