@@ -1,7 +1,7 @@
 # Use an official Python runtime as a parent image
-FROM python:3.6
+FROM python:3.10.12
 
-RUN pip install pandas==0.24 -i https://pypi.douban.com/simple
+RUN pip install pandas==2.1.4 -i https://pypi.douban.com/simple
 
 # Set the current working directory in container to /app
 WORKDIR /app
